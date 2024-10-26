@@ -2,13 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
 .dark-theme {
-    background-color: #000000;
+    background-color:  hsl(207, 26%, 17%);
     color: #ffffff;
   }
   
   .light-theme {
     background-color: #ffffff;
-    color: #000000;
+    color:  hsl(207, 26%, 17%);
   }
 
+  .dark-theme-head{
+    background-color:hsl(209, 23%, 22%);
+
+  }
