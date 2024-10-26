@@ -6,7 +6,7 @@ export default function FilterSelect({ options, option, onChange, click, label }
   return (
     <>
       <select
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
         className={`mt-4 p-3 w-full sm:w-auto border-none drop-shadow-2xl rounded-lg ${
           click
             ? "dark-theme-head"
