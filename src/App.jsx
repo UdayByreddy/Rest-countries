@@ -23,7 +23,7 @@ const App = () => {
         const countriesData = await fetchCountries();
         setCountries(countriesData);
       } catch (error) {
-        console.error('Error fetching countries data:', error);
+        <ErrorPage />
       }
     };
 
@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <Toggler.Provider value={{ click, countries ,submitHandler }}>
-    <div className={click ? 'dark-theme' : 'light-theme'}>
+    <div className={`h-[100vh] ${click ? 'dark-theme' : 'light-theme'}`}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
