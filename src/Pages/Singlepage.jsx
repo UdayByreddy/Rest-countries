@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { Toggler } from '../App'
-import SingleCountry from '../Components/SingleCountry';
 import Head from '../Components/Head';
+import Country from '../Layouts/Country';
 
 export default function SinglePage() {
-  const {click,handler} = useContext(Toggler);
+  const {click,submitHandler} = useContext(Toggler);
   return (
     <>
-        <Head click={click} handler={handler} />
-        <SingleCountry />
+        <Head click={click} submitHandler={submitHandler} />
+        <Country />
     </>
   )
 }
