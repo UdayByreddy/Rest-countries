@@ -1,7 +1,7 @@
 import React, { useContext} from 'react';
 import { Toggler } from '../App';
 import SingleCountryCard from '../Components/SingleCountryCard';
-import ErrorPage from '../ErrorHandler/ErrorPage';
+import ProductNotFoundPage from '../ErrorHandler/ProductNotFoundPage';
 
 
 export default function Allcountries({click,inputValue,option,population,area,subregion}) {
@@ -54,18 +54,16 @@ export default function Allcountries({click,inputValue,option,population,area,su
     const filteredCountries = filtercountries();
   
     return (
-      <div
-        className={`w-full grid grid-cols-1 place-items-center p-4 gap-6 md:grid-cols-2 lg:grid-cols-4 ${click ? 'bg-gray-900' : 'bg-white'}`}
-      >
-        {filteredCountries.length > 0 ? (
-          filteredCountries.map((country,index)=>(
+      <div className={`flex mt-10 flex-wrap gap-10 justify-center items-center px-[1rem] ${click?'dark-theme':'light-theme'}`}>
+  {filteredCountries.length > 0 ? (
+    filteredCountries.map((country, index) => (
+      <SingleCountryCard key={index} country={country} click={click} />
+    ))
+  ) : (
+    <ProductNotFoundPage />
+  )}
+</div>
 
-            <SingleCountryCard country={country} index={index} click={click} />
-          ))
-        ) : (
-          <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-3.png" className='w-full h-50'/>
-        )}
-      </div>
     )
 }
 
