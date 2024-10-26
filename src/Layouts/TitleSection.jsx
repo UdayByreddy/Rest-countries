@@ -41,28 +41,24 @@ const TitleSection = ({ click }) => {
     return (
         <>
         <div>
-             <div className={`mt-4 flex flex-wrap justify-between mx-2 lg:mx-0 ${click ? 'bg-gray-900' : 'bg-white'}`}>
+             <div className={`mt-4 flex flex-wrap justify-between mx-2 lg:mx-0 ${click ? 'dark-theme' : 'light-theme'}`}>
                 <SearchInput click={click} onChange={setInputValue} />
 
                 <FilterSelect options={regionOptions} option={option} onChange={setOption} click={click} label="Filter By Region" />
-            </div>
-
-            <div className={`mt-4 flex flex-wrap justify-between mx-2 lg:mx-0 ${click ? 'bg-gray-900' : 'bg-white'}`}>
-                <FilterSelect options={populationOptions} option={population} onChange={setPopulation} click={click} label="Filter by Population" />
-
-                <FilterSelect options={areaOptions} option={area} onChange={setArea} click={click} label="Filter by Area" />
-            </div>
-
-            <div className={`mt-4 flex flex-wrap justify-between mx-2 lg:mx-0 ${click ? 'bg-gray-900' : 'bg-white'}`}>
-                <FilterSelect 
+               {option && <FilterSelect 
                     options={subRegionList()}
                     option={subregion} 
                     onChange={setSubRegion} 
                     label="Filter by Subregion" 
                     click={click} 
-                />
+                />} 
             </div>
 
+            <div className={`mt-4 flex flex-wrap justify-between mx-2 lg:mx-0 ${click ? 'dark-theme' : 'light-theme'}`}>
+                <FilterSelect options={populationOptions} option={population} onChange={setPopulation} click={click} label="Filter by Population" />
+
+                <FilterSelect options={areaOptions} option={area} onChange={setArea} click={click} label="Filter by Area" />
+            </div>
         </div>
            
 
