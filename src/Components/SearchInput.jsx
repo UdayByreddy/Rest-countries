@@ -18,7 +18,7 @@ export default function SearchInput({click,onChange}) {
               ? "dark-theme-head"
               : "light-theme"
           }`}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={onChange}
         />
       </div>
     </>
