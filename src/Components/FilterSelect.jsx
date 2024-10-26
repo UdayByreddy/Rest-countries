@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 
 export default function FilterSelect({ options, option, onChange, click, label }) {
@@ -5,10 +7,10 @@ export default function FilterSelect({ options, option, onChange, click, label }
     <>
       <select
         onChange={(e) => onChange(e.target.value)}
-        className={`mt-4 p-3 w-full sm:w-auto border rounded-lg ${
+        className={`mt-4 p-3 w-full sm:w-auto border-none drop-shadow-2xl rounded-lg ${
           click
-            ? "bg-black text-white border-gray-600"
-            : "bg-white text-black border-gray-300"
+            ? "dark-theme-head"
+            : "light-theme"
         } lg:px-12 lg:ml-8`}
         value={option} 
       >
