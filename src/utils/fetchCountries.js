@@ -49,7 +49,6 @@ export const fetchCountries = async () => {
 
     return countriesData;
   } catch (error) {
-    console.error('Error fetching countries data:', error);
-    throw error;
+    return error;
   }
 };
